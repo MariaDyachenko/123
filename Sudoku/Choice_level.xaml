@@ -1,0 +1,28 @@
+﻿<Window x:Class="kurs.Choice_level"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Choice level" Height="536.17" Width="625.5"
+         WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Margin="0,0,0,-12">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FF00DCFF" Offset="0.647"/>
+                    <GradientStop Color="#FF45E2FB" Offset="0.453"/>
+                    <GradientStop Color="#FF695BF9" Offset="0.94"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+
+            <Button Background="#FF4E7CFB" Name="Easy" Click="Easy_Click" Height="70" FontFamily="Vladimir Script" FontSize="36">Easy level</Button>
+            <Button Background="#FF4E7CFB" Name="Medium" Click="Medium_Click" Height="70" FontFamily="Vladimir Script" FontSize="36">Medium level</Button>
+            <Button Background="#FF4E7CFB" Name="Challenging" Click="Challenging_Click" Height="70" FontFamily="Vladimir Script" FontSize="36">Challenging level</Button>
+            <Button Background="#FF4E7CFB" Name="Hard" Click="Hard_Click" Height="70" FontFamily="Vladimir Script" FontSize="36">Hard level</Button>
+            <Button Background="#FF4E7CFB" Name="Finendish" Click="Finendish_Click" Height="70" FontFamily="Vladimir Script" FontSize="36">Finendish level</Button>
+            <Button Background="#FF4E7CFB" Name="Exit" Click="Exit_Click" Height="70" FontFamily="Vladimir Script" FontSize="36">Exit</Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,158 @@
+﻿<Window x:Class="kurs.Sudoku"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Sudoku" Height="536.17" Width="625.5" Closing="Window_Closing"
+         WindowStartupLocation="CenterScreen">
+    <Grid Name="Grid">
+        <StackPanel Margin="0,0,0,-12">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FF00DCFF" Offset="0.647"/>
+                    <GradientStop Color="#FF45E2FB" Offset="0.453"/>
+                    <GradientStop Color="#FF695BF9" Offset="0.94"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+
+            <Button Background="#FF4E7CFB" Name="New_Game" Click="New_Game_Click">New Game
+            </Button>
+
+
+            <Button Background="#FF4E7CFB" Name="Load_Game" Click="Load_Game_Click">Load Game</Button>
+
+            <Button Background="#FF4E7CFB" Name="Save_Game" Click="Save_Game_Click">Save Game</Button>
+
+            <Button Background="#FF4E7CFB" Name="Exit" Click="Exit_Click">Exit</Button>
+
+
+        </StackPanel>
+        <Grid Name="myGrid" HorizontalAlignment="Left" Height="270" Margin="140,148,0,0" VerticalAlignment="Top" Width="340">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <TextBox MaxLength="1" PreviewTextInput="NumberValidationTextBox" Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="0" Grid.Row="1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="0" Grid.Row="2" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="0" Grid.Row="3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="0" Grid.Row="4"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="0" Grid.Row="5" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="0" Grid.Row="6"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="0" Grid.Row="7"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="0" Grid.Row="8"/>
+
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="0"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="2" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="4"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="5" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="6"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="7"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="8"/>
+
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="2" Grid.Row="0" BorderThickness="1,1,3,1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="2" Grid.Row="1" BorderThickness="1,1,3,1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="2" Grid.Row="2" BorderThickness="1,1,3,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="2" Grid.Row="3" BorderThickness="1,1,3,1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="2" Grid.Row="4" BorderThickness="1,1,3,1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="2" Grid.Row="5" BorderThickness="1,1,3,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="2" Grid.Row="6" BorderThickness="1,1,3,1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="2" Grid.Row="7" BorderThickness="1,1,3,1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="2" Grid.Row="8" BorderThickness="1,1,3,1"/>
+
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="3" Grid.Row="0"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="3" Grid.Row="1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="3" Grid.Row="2" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="3" Grid.Row="3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="3" Grid.Row="4"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="3" Grid.Row="5" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="3" Grid.Row="6"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="3" Grid.Row="7"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="3" Grid.Row="8"/>
+
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="4" Grid.Row="0"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="4" Grid.Row="1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="4" Grid.Row="2" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="4" Grid.Row="3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="4" Grid.Row="4"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="4" Grid.Row="5" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="4" Grid.Row="6"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="4" Grid.Row="7"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="4" Grid.Row="8"/>
+
+
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="5" Grid.Row="0" BorderThickness="1,1,3,1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="5" Grid.Row="1" BorderThickness="1,1,3,1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="5" Grid.Row="2" BorderThickness="1,1,3,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="5" Grid.Row="3" BorderThickness="1,1,3,1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="5" Grid.Row="4" BorderThickness="1,1,3,1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="5" Grid.Row="5" BorderThickness="1,1,3,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="5" Grid.Row="6" BorderThickness="1,1,3,1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="5" Grid.Row="7" BorderThickness="1,1,3,1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="5" Grid.Row="8" BorderThickness="1,1,3,1"/>
+
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="6" Grid.Row="0"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="6" Grid.Row="1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="6" Grid.Row="2" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="6" Grid.Row="3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="6" Grid.Row="4"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="6" Grid.Row="5" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="6" Grid.Row="6"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="6" Grid.Row="7"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="6" Grid.Row="8"/>
+
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="7" Grid.Row="0"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="7" Grid.Row="1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="7" Grid.Row="2" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="7" Grid.Row="3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="7" Grid.Row="4"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="7" Grid.Row="5" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="7" Grid.Row="6"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="7" Grid.Row="7"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="7" Grid.Row="8"/>
+
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="8" Grid.Row="0"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="8" Grid.Row="1"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="8" Grid.Row="2" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="8" Grid.Row="3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="8" Grid.Row="4"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="8" Grid.Row="5" BorderThickness="1,1,1,3"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="8" Grid.Row="6"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="8" Grid.Row="7"/>
+            <TextBox MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"  PreviewTextInput="NumberValidationTextBox" Grid.Column="8" Grid.Row="8"/>
+        </Grid>
+        <StackPanel  Margin="0,81,0,0" VerticalAlignment="Top" >
+
+            <Button Name="Check" Background="#FF4E7CFB" Click="Check_Click" Height="39" Margin="206,0,213,0" HorizontalAlignment="Center" Width="199">Check</Button>
+        </StackPanel>
+
+    </Grid>
+</Window>
